@@ -41,12 +41,10 @@ function AppHeader(props) {
   const [, pageGroup] = props.location.pathname.split("/");
 
   const items = [
-    { text: "E-commerce", path: "/e-commerce" },
+    { text: "Financial Mathematics", path: "/basic-math" },
+    { text: "Statistics", path: "/basic-stats" },
     { text: "Inbound", path: "/inbound" },
-    { text: "Inventory", path: "/inventory" },
-    { text: "Outbound", path: "/outbound" },
-    { text: "Delivery", path: "/delivery" },
-    { text: "Labor", path: "/labor" }
+    { text: "Delivery", path: "/delivery" }
   ];
 
   return (

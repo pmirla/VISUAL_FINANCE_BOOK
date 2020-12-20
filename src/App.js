@@ -14,6 +14,9 @@ import AppSidebar from "./components/AppSidebar";
 
 import getDeliveryPages from "./pages/delivery";
 import getInboundPages from "./pages/inbound";
+import getBasicMathPages from "./pages/basic-math";
+import getBasicStatsPages from "./pages/stats";
+
 const useStyles = makeStyles((theme) => ({
   appRoot: {
     display: "flex",
@@ -36,7 +39,12 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
 
-  const pages = [...getDeliveryPages(), ...getInboundPages()];
+  const pages = [
+    ...getBasicMathPages(),
+    ...getDeliveryPages(),
+    ...getInboundPages(),
+    ...getBasicStatsPages()
+  ];
 
   return (
     <ThemeProvider theme={theme}>
@@ -52,7 +60,7 @@ function App() {
                     <Component />
                   </Route>
                 ))}
-                <Redirect path="/" to="/e-commerce" />
+                <Redirect path="/" to="/inbound/example" />
               </Switch>
             </div>
           </main>
