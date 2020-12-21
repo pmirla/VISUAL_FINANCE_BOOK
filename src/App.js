@@ -14,7 +14,7 @@ import AppSidebar from "./components/AppSidebar";
 
 import getDeliveryPages from "./pages/delivery";
 import getInboundPages from "./pages/inbound";
-import getBasicMathPages from "./pages/basic-math";
+import getBasicMathPages from "./pages/math";
 import getBasicStatsPages from "./pages/stats";
 
 const useStyles = makeStyles((theme) => ({

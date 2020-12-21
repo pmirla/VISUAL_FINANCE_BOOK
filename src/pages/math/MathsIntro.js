@@ -4,10 +4,10 @@ import React from "react";
 // const useStyles = makeStyles((theme) => ({
 // }));
 
-function Example2() {
+function MathsIntro() {
   // const classes = useStyles();
 
-  return <div>This is a Basic Math Home Page 2</div>;
+  return <div>This is a Basic Math Home Page</div>;
 }
 
-export default Example2;
+export default MathsIntro;

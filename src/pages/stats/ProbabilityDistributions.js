@@ -47,7 +47,7 @@ function ProbabilityDistributions() {
               <Binomial />
             </Route>
             <Route path="/stats/normalDist">
-              <normalDist />
+              <NormalDist />
             </Route>
             <Route path="/stats/chiSquare">
               <ChiSquare />
@@ -94,7 +94,7 @@ function Binomial() {
   );
 }
 
-function normalDist() {
+function NormalDist() {
   return (
     <div>
       <h2>normalDist</h2>

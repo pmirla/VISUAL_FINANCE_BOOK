@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 
-import BasicStats001 from "./BasicStats001";
+import StatsIntro from "./StatsIntro";
 import ProbabilityTheory from "./ProbabilityTheory";
 import ProbabilityDistributions from "./ProbabilityDistributions";
 export default () => [
@@ -10,7 +10,7 @@ export default () => [
     text: "Introduction",
     path: "/stats/intro",
     exact: true,
-    Component: BasicStats001,
+    Component: StatsIntro,
     Icon: HomeIcon
   },
   {
@@ -28,7 +28,7 @@ export default () => [
     Icon: HomeIcon
   },
   {
-    path: "/basic-stats",
+    path: "/stats",
     Component: () => <Redirect to="/stats/intro" />
   }
 ];
