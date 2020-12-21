@@ -42,9 +42,8 @@ function AppHeader(props) {
 
   const items = [
     { text: "Financial Mathematics", path: "/math" },
-    { text: "Statistics", path: "/stats" },
-    { text: "Inbound", path: "/inbound" },
-    { text: "Delivery", path: "/delivery" }
+    { text: "Statistics", path: "/stats" }
+
   ];
 
   return (
