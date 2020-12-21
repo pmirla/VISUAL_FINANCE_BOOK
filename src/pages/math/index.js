@@ -67,6 +67,6 @@ export default () => [
 
   {
     path: "/math",
-    Component: () => <Redirect to="/math/example" />
+    Component: () => <Redirect to="/math/mathsIntro" />
   } // Default route redirct
 ];
