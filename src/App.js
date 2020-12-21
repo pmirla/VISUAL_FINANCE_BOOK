@@ -12,8 +12,6 @@ import theme from "./theme";
 import AppHeader from "./components/AppHeader";
 import AppSidebar from "./components/AppSidebar";
 
-import getDeliveryPages from "./pages/delivery";
-import getInboundPages from "./pages/inbound";
 import getBasicMathPages from "./pages/math";
 import getBasicStatsPages from "./pages/stats";
 
@@ -39,12 +37,7 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
 
-  const pages = [
-    ...getBasicMathPages(),
-    ...getDeliveryPages(),
-    ...getInboundPages(),
-    ...getBasicStatsPages()
-  ];
+  const pages = [...getBasicMathPages(), ...getBasicStatsPages()];
 
   return (
     <ThemeProvider theme={theme}>
@@ -60,7 +53,7 @@ function App() {
                     <Component />
                   </Route>
                 ))}
-                <Redirect path="/" to="/inbound/example" />
+                <Redirect path="/" to="/math/" />
               </Switch>
             </div>
           </main>
