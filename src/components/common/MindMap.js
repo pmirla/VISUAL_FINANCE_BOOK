@@ -30,7 +30,7 @@ const MindMap = (props) => {
         root.descendants().forEach((d, i) => {
           d.id = i;
           d._children = d.children;
-          if (d.depth && d.data.name.length !== 7) d.children = null;
+          // if (d.depth && d.data.name.length !== 7) d.children = null;
         });
 
         const svg = d3
@@ -174,7 +174,7 @@ const MindMap = (props) => {
   );
 
   return (
-    <svg className="d3-component" width={600} height={800} ref={d3Container} />
+    <svg className="d3-component" width={900} height={1400} ref={d3Container} />
   );
 };
 
