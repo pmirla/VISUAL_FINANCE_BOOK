@@ -12,10 +12,12 @@ function ElementaryMathematics() {
         <div>
           <ul>
             <li>
-              <Link to="./objects">Basic Mathematical Objects</Link>
+              <Link to="/math/objects">Basic Mathematical Objects</Link>
             </li>
             <li>
-              <Link to="./variables">Variables, Binomials and Polynomials</Link>
+              <Link to="/math/variables">
+                Variables, Binomials and Polynomials
+              </Link>
             </li>
             <li>
               <Link to="./equations">High Order Equations </Link>

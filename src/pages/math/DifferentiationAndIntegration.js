@@ -1,6 +1,20 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
+import ProtectedRoute from "../../components/common/ProtectedRoute";
+import LinksAndRoutes from "../../components/common/LinksAndRoutes";
+
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import InboxIcon from "@material-ui/icons/Inbox";
 
 function DifferentiationAndIntegration() {
   const history = useHistory();
@@ -8,119 +22,88 @@ function DifferentiationAndIntegration() {
   const handleClick = () => {
     history.push("/math/mathsIntro");
   };
+
+  const linksAndRoutes = [
+    {
+      text: "ParametricRepresentataion",
+      path: "/math/ParametricRepresentataion",
+      exact: true,
+      Component: <ParametricRepresentataion />
+    },
+    {
+      text: "Differentiation",
+      path: "/math/Differentiation",
+      exact: true,
+      Component: <Differentiation />
+    },
+    {
+      text: "DifferentiationRules",
+      path: "/math/DifferentiationRules",
+      exact: true,
+      Component: <DifferentiationRules />
+    },
+    {
+      text: "MaxAndMinOfFunction",
+      path: "/math/MaxAndMinOfFunction",
+      exact: true,
+      Component: <MaxAndMinOfFunction />
+    },
+    {
+      text: "MeanValueTheorm",
+      path: "/math/MeanValueTheorm",
+      exact: true,
+      Component: <MeanValueTheorm />
+    },
+    {
+      text: "TaylorsExpansion",
+      path: "/math/TaylorsExpansion",
+      exact: true,
+      Component: <TaylorsExpansion />
+    },
+    {
+      text: "Integration",
+      path: "/math/Integration",
+      exact: true,
+      Component: <Integration />
+    },
+    {
+      text: "FirstTheormCalculus",
+      path: "/math/FirstTheormCalculus",
+      exact: true,
+      Component: <FirstTheormCalculus />
+    },
+
+    {
+      text: "ChangeInVariables",
+      path: "/math/ChangeInVariables",
+      exact: true,
+      Component: <Integration />
+    },
+    {
+      text: "DoubleIntegral",
+      path: "/math/DoubleIntegral",
+      exact: true,
+      Component: <DoubleIntegral />
+    },
+
+    {
+      text: "DurationofBond",
+      path: "/math/DurationofBond",
+      exact: true,
+      Component: <DurationofBond />
+    },
+
+    {
+      text: "ConvexityofBond",
+      path: "/math/ConvexityofBond",
+      exact: true,
+      Component: <ConvexityofBond />
+    }
+  ];
+
   return (
     <>
-      <div> Multivariate Functions in Finance and Economics</div>
-      <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="./parametricRepresentataion">
-                Parametric Repressentaion
-              </Link>
-            </li>
-
-            <li>
-              <Link to="./differentiation">Differentiation</Link>
-            </li>
-
-            <li>
-              <Link to="./differentiationRules">DifferentiationRules</Link>
-            </li>
-
-            <li>
-              <Link to="./differentiation">Differentiation</Link>
-            </li>
-
-            <li>
-              <Link to="./maxAndMinOfFunction">MaxAndMinOfFunction</Link>
-            </li>
-
-            <li>
-              <Link to="./meanValueTheorm">MeanValueTheorm</Link>
-            </li>
-
-            <li>
-              <Link to="./taylorsExpansion">TaylorsExpansion</Link>
-            </li>
-
-            <li>
-              <Link to="./integration">Integration</Link>
-            </li>
-
-            <li>
-              <Link to="./changeInVariables">ChangeInVariables</Link>
-            </li>
-
-            <li>
-              <Link to="./doubleIntegral">DoubleIntegral</Link>
-            </li>
-
-            <li>
-              <Link to="./durationofBond">DurationofBond</Link>
-            </li>
-
-            <li>
-              <Link to="./convexityofBond">ConvexityofBond</Link>
-            </li>
-          </ul>
-          {/* <div>
-            <button onClick={handleClick} type="button" />
-            Navigation with useHistory
-          </div> */}
-
-          <hr />
-          <Switch>
-            <Route path="/math/parametricRepresentataion">
-              <ParametricRepresentataion />
-            </Route>
-
-            <Route path="/math/differentiation">
-              <Differentiation />
-            </Route>
-
-            <Route path="/math/differentiationRules">
-              <DifferentiationRules />
-            </Route>
-
-            <Route path="/math/maxAndMinOfFunction">
-              <MaxAndMinOfFunction />
-            </Route>
-
-            <Route path="/math/meanValueTheorm">
-              <MeanValueTheorm />
-            </Route>
-
-            <Route path="/math/taylorsExpansion">
-              <TaylorsExpansion />
-            </Route>
-
-            <Route path="/math/integration">
-              <Integration />
-            </Route>
-
-            <Route path="/math/firstTheormCalculus">
-              <FirstTheormCalculus />
-            </Route>
-
-            <Route path="/math/changeInVariables">
-              <ChangeInVariables />
-            </Route>
-
-            <Route path="/math/doubleIntegral">
-              <DoubleIntegral />
-            </Route>
-
-            <Route path="/math/durationofBond">
-              <DurationofBond />
-            </Route>
-
-            <Route path="/math/convexityofBond">
-              <ConvexityofBond />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <LinksAndRoutes data={linksAndRoutes} />
     </>
   );
 }
