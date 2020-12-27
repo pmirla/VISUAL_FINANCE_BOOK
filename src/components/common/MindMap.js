@@ -15,8 +15,8 @@ const MindMap = (props) => {
   const dy = 160;
   const margin = { top: 10, right: 120, bottom: 10, left: 40 };
   const tree = d3.tree().nodeSize([dx, dy]);
-  const width = 600;
-  // const height = 800;
+  const viewWidth = 600;
+  const height = 800;
 
   /* The useEffect Hook is for running side effects outside of React,
      for instance inserting elements into the DOM using D3 */
@@ -35,7 +35,7 @@ const MindMap = (props) => {
 
         const svg = d3
           .select(d3Container.current)
-          .attr("viewBox", [-margin.left, -margin.top, width, dx])
+          .attr("viewBox", [-margin.left, -margin.top, viewWidth, dx])
           .style("font", "10px sans-serif")
           .style("user-select", "none");
 
@@ -71,7 +71,12 @@ const MindMap = (props) => {
           const transition = svg
             .transition()
             .duration(duration)
-            .attr("viewBox", [-margin.left, left.x - margin.top, width, height])
+            .attr("viewBox", [
+              -margin.left,
+              left.x - margin.top,
+              viewWidth,
+              height
+            ])
             .tween(
               "resize",
               window.ResizeObserver ? null : () => () => svg.dispatch("toggle")
@@ -175,6 +180,7 @@ const MindMap = (props) => {
 
   return (
     <svg className="d3-component" width={900} height={1400} ref={d3Container} />
+    // width={900} height={1400}
   );
 };
 
