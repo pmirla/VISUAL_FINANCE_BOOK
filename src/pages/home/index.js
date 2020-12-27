@@ -5,6 +5,7 @@ import LockIcon from "@material-ui/icons/Lock";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 
 import HomeIntro from "./HomeIntro";
+import Account from "./Account";
 
 export default () => [
   {
@@ -12,6 +13,14 @@ export default () => [
     path: "/home/HomeIntro",
     exact: true,
     Component: HomeIntro,
+    Icon: HomeIcon
+  },
+
+  {
+    text: "Account",
+    path: "/home/Account",
+    exact: true,
+    Component: Account,
     Icon: HomeIcon
   },
 
