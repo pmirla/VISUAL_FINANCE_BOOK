@@ -1,44 +1,25 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import LinksAndRoutes from "../../components/common/LinksAndRoutes";
 
 function MultivariateFunctions() {
-  const history = useHistory();
-
-  const handleClick = () => {
-    history.push("/math/mathsIntro");
-  };
+  const linksAndRoutes = [
+    {
+      text: "ParametricRepresentataion",
+      path: "/math/ParametricRepresentataion",
+      exact: true,
+      Component: <ParametricRepresentataion />
+    },
+    {
+      text: "LevelCurves",
+      path: "/math/LevelCurves",
+      exact: true,
+      Component: <LevelCurves />
+    }
+  ];
   return (
     <>
       <div> Multivariate Functions in Finance and Economics</div>
-      <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="./parametricRepresentataion">
-                Parametric Repressentaion
-              </Link>
-            </li>
-            <li>
-              <Link to="./levelCurves">Level Curves</Link>
-            </li>
-          </ul>
-          {/* <div>
-            <button onClick={handleClick} type="button" />
-            Navigation with useHistory
-          </div> */}
-
-          <hr />
-          <Switch>
-            <Route path="/math/parametricRepresentataion">
-              <ParametricRepresentataion />
-            </Route>
-            <Route path="/math/levelCurves">
-              <LevelCurves />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <LinksAndRoutes data={linksAndRoutes} />
     </>
   );
 }

@@ -1,7 +1,8 @@
 // add useContext
 import React, { useContext } from "react";
 import { firebaseAuth } from "../../provider/AuthProvider";
-
+import { Signup } from "./Signup";
+import { Route, Switch } from "react-router-dom";
 const Signin = () => {
   const { handleSignin, inputs, setInputs, errors } = useContext(firebaseAuth);
 
@@ -35,7 +36,12 @@ const Signin = () => {
       />
       <button>signin</button>
       {errors.length > 0
-        ? errors.map((error) => <p style={{ color: "red" }}>{error}</p>)
+        ? errors.map((error) => (
+            <>
+              <p style={{ color: "red" }}>{error}</p>
+              {/* <Signup /> */}
+            </>
+          ))
         : null}
     </form>
   );

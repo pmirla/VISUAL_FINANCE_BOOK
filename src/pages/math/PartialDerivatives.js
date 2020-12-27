@@ -1,104 +1,74 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import LinksAndRoutes from "../../components/common/LinksAndRoutes";
 
 function MultivariateFunctions() {
-  const history = useHistory();
+  const linksAndRoutes = [
+    {
+      text: "PartialDervComputataion",
+      path: "/math/PartialDervComputataion",
+      exact: true,
+      Component: <PartialDervComputataion />
+    },
+    {
+      text: "ChainRule",
+      path: "/math/ChainRule",
+      exact: true,
+      Component: <ChainRule />
+    },
+    {
+      text: "DervInplicitFunctions",
+      path: "/math/DervInplicitFunctions",
+      exact: true,
+      Component: <DervInplicitFunctions />
+    },
+    {
+      text: "TotalDifferential",
+      path: "/math/TotalDifferential",
+      exact: true,
+      Component: <TotalDifferential />
+    },
+    {
+      text: "DirectionalDerivative",
+      path: "/math/DirectionalDerivative",
+      exact: true,
+      Component: <DirectionalDerivative />
+    },
+    {
+      text: "Gradients",
+      path: "/math/Gradients",
+      exact: true,
+      Component: <Gradients />
+    },
+    {
+      text: "TangentPlanes",
+      path: "/math/TangentPlanes",
+      exact: true,
+      Component: <TangentPlanes />
+    },
+    {
+      text: "NormalLine",
+      path: "/math/NormalLine",
+      exact: true,
+      Component: <NormalLine />
+    },
+    {
+      text: "Extrema",
+      path: "/math/Extrema",
+      exact: true,
+      Component: <Extrema />
+    },
+    {
+      text: "LagrangeMethod",
+      path: "/math/LagrangeMethod",
+      exact: true,
+      Component: <LagrangeMethod />
+    }
+  ];
 
-  const handleClick = () => {
-    history.push("/math/mathsIntro");
-  };
   return (
     <>
       <div> Multivariate Functions in Finance and Economics</div>
-      <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="./chainRule">ChainRule</Link>
-            </li>
-
-            <li>
-              <Link to="./dervInplicitFunctions"> DervInplicitFunctions</Link>
-            </li>
-
-            <li>
-              <Link to="./totalDifferential"> TotalDifferential</Link>
-            </li>
-
-            <li>
-              <Link to="./directionalDerivative"> DirectionalDerivative</Link>
-            </li>
-
-            <li>
-              <Link to="./gradients"> Gradients</Link>
-            </li>
-
-            <li>
-              <Link to="./tangentPlanes"> TangentPlanes</Link>
-            </li>
-
-            <li>
-              <Link to="./normalLine"> NormalLine</Link>
-            </li>
-
-            <li>
-              <Link to="./extrema"> Extrema</Link>
-            </li>
-
-            <li>
-              <Link to="./lagrangeMethod"> LagrangeMethod</Link>
-            </li>
-          </ul>
-          {/* <div>
-            <button onClick={handleClick} type="button" />
-            Navigation with useHistory
-          </div> */}
-
-          <hr />
-          <Switch>
-            <Route path="/math/partialDervComputataion">
-              <PartialDervComputataion />
-            </Route>
-
-            <Route path="/math/chainRule">
-              <ChainRule />
-            </Route>
-
-            <Route path="/math/dervInplicitFunctions">
-              <DervInplicitFunctions />
-            </Route>
-
-            <Route path="/math/totalDifferential">
-              <TotalDifferential />
-            </Route>
-
-            <Route path="/math/directionalDerivative">
-              <DirectionalDerivative />
-            </Route>
-
-            <Route path="/math/gradients">
-              <Gradients />
-            </Route>
-
-            <Route path="/math/tangentPlanes">
-              <TangentPlanes />
-            </Route>
-
-            <Route path="/math/normalLine">
-              <NormalLine />
-            </Route>
-
-            <Route path="/math/extrema">
-              <Extrema />
-            </Route>
-
-            <Route path="/math/lagrangeMethod">
-              <LagrangeMethod />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <LinksAndRoutes data={linksAndRoutes} />
     </>
   );
 }

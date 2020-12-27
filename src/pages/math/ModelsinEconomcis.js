@@ -1,67 +1,45 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import GGBApplet from "./geogebrascript.js";
-import Button from "@material-ui/core/Button";
+import LinksAndRoutes from "../../components/common/LinksAndRoutes";
 
 function ModelsinEconomcis() {
+  const linksAndRoutes = [
+    {
+      text: "DemandAndSupply",
+      path: "/math/DemandAndSupply",
+      exact: true,
+      Component: <DemandAndSupply />
+    },
+    {
+      text: "BudgetConstratint",
+      path: "/math/BudgetConstratint",
+      exact: true,
+      Component: <BudgetConstratint />
+    },
+    {
+      text: "PosisbilityFrontier",
+      path: "/math/PosisbilityFrontier",
+      exact: true,
+      Component: <PosisbilityFrontier />
+    },
+    {
+      text: "UtilityFunction",
+      path: "/math/UtilityFunction",
+      exact: true,
+      Component: <UtilityFunction />
+    },
+    {
+      text: "ProductionFunction",
+      path: "/math/ProductionFunction",
+      exact: true,
+      Component: <ProductionFunction />
+    }
+  ];
+
   return (
     <>
       <div> Functions And Models in Economics</div>
-      <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="./demandAndSupply">
-                The Market Model. Demand and Supply Functions{" "}
-              </Link>
-            </li>
-            <li>
-              <Link to="./budgetConstratint">Budget Constratint</Link>
-            </li>
-            <li>
-              <Link to="./posisbilityFrontier">
-                The Production Posisbility Frontier{" "}
-              </Link>
-            </li>
-
-            <li>
-              <Link to="./utilityFunction">Utility Function</Link>
-            </li>
-
-            <li>
-              <Link to="./productionFunction">Production Function</Link>
-            </li>
-
-            <li>
-              <Link to="./utilityFunction">Utility Function</Link>
-            </li>
-          </ul>
-
-          <hr />
-          <Switch>
-            <Route path="/math/demandAndSupply">
-              <DemandAndSupply />
-            </Route>
-
-            <Route path="/math/budgetConstratint">
-              <BudgetConstratint />
-            </Route>
-
-            <Route path="/math/posisbilityFrontier">
-              <PosisbilityFrontier />
-            </Route>
-
-            <Route path="/math/utilityFunction">
-              <UtilityFunction />
-            </Route>
-
-            <Route path="/math/productionFunction">
-              <ProductionFunction />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <LinksAndRoutes data={linksAndRoutes} />
     </>
   );
 }

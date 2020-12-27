@@ -1,86 +1,58 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import LinksAndRoutes from "../../components/common/LinksAndRoutes";
 
 function ModelsinFinance() {
-  const history = useHistory();
+  const linksAndRoutes = [
+    {
+      text: "PresentValue",
+      path: "/math/PresentValue",
+      exact: true,
+      Component: <PresentValue />
+    },
+    {
+      text: "Capm",
+      path: "/math/Capm",
+      exact: true,
+      Component: <Capm />
+    },
+    {
+      text: "FuturesContractPayoff",
+      path: "/math/FuturesContractPayoff",
+      exact: true,
+      Component: <FuturesContractPayoff />
+    },
+    {
+      text: "OptionsContractPayoff",
+      path: "/math/OptionsContractPayoff",
+      exact: true,
+      Component: <OptionsContractPayoff />
+    },
+    {
+      text: "SwapPayoff",
+      path: "/math/SwapPayoff",
+      exact: true,
+      Component: <SwapPayoff />
+    },
 
-  const handleClick = () => {
-    history.push("/math/mathsIntro");
-  };
+    {
+      text: "OptionPrice",
+      path: "/math/OptionPrice",
+      exact: true,
+      Component: <OptionPrice />
+    },
+
+    {
+      text: "ForwardExchangeRate",
+      path: "/math/ForwardExchangeRate",
+      exact: true,
+      Component: <ForwardExchangeRate />
+    }
+  ];
+
   return (
     <>
       <div> Functions And Models in Finance</div>
-      <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="./presentValue">Present Value Function </Link>
-            </li>
-            <li>
-              <Link to="./capm">The Capital Asset Pricing Model CAPM </Link>
-            </li>
-            <li>
-              <Link to="./futuresContractPayoff">
-                Payoff of Futures contract{" "}
-              </Link>
-            </li>
-            <li>
-              <Link to="./optionsContractPayoff">
-                Payoff of Options Contract{" "}
-              </Link>
-            </li>
-
-            <li>
-              <Link to="./swapPayoff">Payoff of Swaps Contract </Link>
-            </li>
-
-            <li>
-              <Link to="./optionPrice">Price of Option</Link>
-            </li>
-
-            <li>
-              <Link to="./forwardExchangeRate">Forward Exchange Rate</Link>
-            </li>
-          </ul>
-          {/* <div>
-            <button onClick={handleClick} type="button" />
-            Navigation with useHistory
-          </div> */}
-
-          <hr />
-          <Switch>
-            <Route path="/math/presentValue">
-              <PresentValue />
-            </Route>
-            <Route path="/math/capm">
-              <Capm />
-            </Route>
-            <Route path="/math/futuresContractPayoff">
-              <FuturesContractPayoff />
-            </Route>
-            <Route path="/math/optionsContractPayoff">
-              <OptionsContractPayoff />
-            </Route>
-
-            <Route path="/math/swapPayoff">
-              <SwapPayoff />
-            </Route>
-
-            <Route path="/math/optionPrice">
-              <OptionPrice />
-            </Route>
-
-            <Route path="/math/forwardExchangeRate">
-              <ForwardExchangeRate />
-            </Route>
-
-            <Route path="/math/forwardExchangeRate">
-              <ForwardExchangeRate />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <LinksAndRoutes data={linksAndRoutes} />
     </>
   );
 }
