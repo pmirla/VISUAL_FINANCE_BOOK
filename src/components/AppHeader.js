@@ -41,9 +41,9 @@ function AppHeader(props) {
   const [, pageGroup] = props.location.pathname.split("/");
 
   const items = [
+    { text: "Home", path: "/home" },
     { text: "Financial Mathematics", path: "/math" },
     { text: "Statistics", path: "/stats" }
-
   ];
 
   return (

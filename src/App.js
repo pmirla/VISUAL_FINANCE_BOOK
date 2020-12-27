@@ -12,6 +12,7 @@ import theme from "./theme";
 import AppHeader from "./components/AppHeader";
 import AppSidebar from "./components/AppSidebar";
 
+import getBasicHomePages from "./pages/home";
 import getBasicMathPages from "./pages/math";
 import getBasicStatsPages from "./pages/stats";
 
@@ -37,7 +38,11 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
 
-  const pages = [...getBasicMathPages(), ...getBasicStatsPages()];
+  const pages = [
+    ...getBasicHomePages(),
+    ...getBasicMathPages(),
+    ...getBasicStatsPages()
+  ];
 
   return (
     <ThemeProvider theme={theme}>
@@ -53,7 +58,7 @@ function App() {
                     <Component />
                   </Route>
                 ))}
-                <Redirect path="/" to="/math/" />
+                <Redirect path="/" to="/home/" />
               </Switch>
             </div>
           </main>

@@ -23,10 +23,10 @@ function MultivariateFunctions() {
               <Link to="./levelCurves">Level Curves</Link>
             </li>
           </ul>
-          <div>
+          {/* <div>
             <button onClick={handleClick} type="button" />
             Navigation with useHistory
-          </div>
+          </div> */}
 
           <hr />
           <Switch>

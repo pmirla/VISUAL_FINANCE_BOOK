@@ -64,10 +64,10 @@ function DifferentiationAndIntegration() {
               <Link to="./convexityofBond">ConvexityofBond</Link>
             </li>
           </ul>
-          <div>
+          {/* <div>
             <button onClick={handleClick} type="button" />
             Navigation with useHistory
-          </div>
+          </div> */}
 
           <hr />
           <Switch>

@@ -43,10 +43,10 @@ function ModelsinFinance() {
               <Link to="./forwardExchangeRate">Forward Exchange Rate</Link>
             </li>
           </ul>
-          <div>
+          {/* <div>
             <button onClick={handleClick} type="button" />
             Navigation with useHistory
-          </div>
+          </div> */}
 
           <hr />
           <Switch>

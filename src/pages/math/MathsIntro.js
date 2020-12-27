@@ -27,25 +27,7 @@ function MathsIntro() {
 
   return (
     <>
-      <div>This is a Basic Math Home Page</div>
-      <button
-        className="mdc-button foo-button"
-        title="back"
-        onClick={onChivron}
-      >
-        <div className="mdc-button__ripple"></div>
-        <span className="material-icons">chevron_left</span>
-      </button>
-
-      <Geogebra
-        id="appId"
-        appName="graphing"
-        material_id="cqvszdes"
-        width="600"
-        height="400"
-        enableUndoRedo="false"
-        appletOnLoad={() => setMessage("loaded")}
-      />
+      <div>This is a Math Home Page</div>
     </>
   );
 }

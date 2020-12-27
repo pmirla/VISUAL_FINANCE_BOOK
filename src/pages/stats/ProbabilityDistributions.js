@@ -1,6 +1,6 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import GGBInject from "../../components/common/GGBInject";
 
 function ProbabilityDistributions() {
   return (
@@ -103,9 +103,17 @@ function NormalDist() {
 }
 
 function ChiSquare() {
+  const newParameters = {
+    material_id: "AQX6fB2e",
+    width: 680
+    // ggbBase64:""
+  };
+
   return (
     <div>
       <h2>ChiSquare</h2>
+      <GGBInject newParameters={newParameters} id="someId1" />
+      https://www.geogebra.org/m/AQX6fB2e
     </div>
   );
 }

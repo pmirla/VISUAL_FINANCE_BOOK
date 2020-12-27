@@ -50,10 +50,10 @@ function MultivariateFunctions() {
               <Link to="./lagrangeMethod"> LagrangeMethod</Link>
             </li>
           </ul>
-          <div>
+          {/* <div>
             <button onClick={handleClick} type="button" />
             Navigation with useHistory
-          </div>
+          </div> */}
 
           <hr />
           <Switch>

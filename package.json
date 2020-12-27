@@ -8,13 +8,19 @@
   ],
   "main": "src/index.js",
   "dependencies": {
-    "@material-ui/core": "4.10.1",
+    "@material-ui/core": "4.11.1",
     "@material-ui/icons": "4.11.2",
+    "@material-ui/lab": "4.0.0-alpha.57",
+    "dotenv": "8.2.0",
+    "firebase": "8.2.1",
+    "material-ui-image": "3.3.1",
     "react": "17.0.0",
     "react-dom": "17.0.0",
     "react-geogebra": "1.0.10",
+    "react-markdown": "5.0.3",
     "react-router-dom": "5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "remark-gfm": "1.0.0"
   },
   "devDependencies": {
     "typescript": "3.8.3"

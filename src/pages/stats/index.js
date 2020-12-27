@@ -5,6 +5,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import StatsIntro from "./StatsIntro";
 import ProbabilityTheory from "./ProbabilityTheory";
 import ProbabilityDistributions from "./ProbabilityDistributions";
+import SamplingAndHypothesis from "./SamplingAndHypothesis";
 export default () => [
   {
     text: "Introduction",
@@ -25,6 +26,13 @@ export default () => [
     path: "/stats/distributions",
     exact: true,
     Component: ProbabilityDistributions,
+    Icon: HomeIcon
+  },
+  {
+    text: "Sampling & Hypothesis",
+    path: "/stats/sampling",
+    exact: true,
+    Component: SamplingAndHypothesis,
     Icon: HomeIcon
   },
   {
