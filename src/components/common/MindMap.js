@@ -1,7 +1,20 @@
 import React, { useEffect, useRef } from "react";
+import { useHistory } from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
+
 import * as d3 from "d3";
 
 const MindMap = (props) => {
+  const history = useHistory();
+
   /* The useRef Hook creates a variable that "holds on" to a value across rendering
      passes. In this case it will hold our component's SVG DOM element. It's
      initialized null and React will assign it later (see the return statement) */
@@ -93,14 +106,19 @@ const MindMap = (props) => {
             .attr("fill-opacity", 0)
             .attr("stroke-opacity", 0)
             .on("click", (event, d) => {
-              d.children = d.children ? null : d._children;
-              update(d);
+              if (d.children) {
+                d.children = d.children ? null : d._children;
+                update(d);
+              } else {
+                history.push("/math/mathElementary");
+              }
+              // history.push("/math/Vectors");
             });
 
           nodeEnter
             .append("circle")
             .attr("r", 2.5)
-            .attr("fill", (d) => (d._children ? "#555" : "#999"))
+            .attr("fill", (d) => (d._children ? "red" : "green"))
             .attr("stroke-width", 10);
 
           nodeEnter
@@ -113,7 +131,11 @@ const MindMap = (props) => {
             .lower()
             .attr("stroke-linejoin", "round")
             .attr("stroke-width", 3)
-            .attr("stroke", "white");
+            .attr("stroke", "white")
+            .on("click", function (d) {
+              // d3.event.stopPropagation();
+              // history.push("/math/Vectors");
+            });
 
           // Transition nodes to their new position.
           const nodeUpdate = node

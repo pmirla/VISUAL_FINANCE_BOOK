@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
 import { firebaseAuth } from "../../provider/AuthProvider";
+import { useHistory, Link, Redirect } from "react-router-dom";
 
 const ProtectedRoute = (props) => {
   const { token } = useContext(firebaseAuth);
-  debugger;
+  const history = useHistory();
+  function handleClick() {
+    // history.push("/home/Account/");
+    history.push("/home");
+  }
   return (
     <>
       {token ? (
@@ -11,10 +16,15 @@ const ProtectedRoute = (props) => {
           <div>
             This is protected Route
             {props.children}
-          </div>{" "}
+          </div>
         </>
       ) : (
-        "Not logged in "
+        <>
+          "Not logged in "
+          <button type="button" onClick={handleClick}>
+            Go SignIn or SignUp
+          </button>
+        </>
       )}
     </>
   );

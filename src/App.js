@@ -58,6 +58,7 @@ function App() {
                     <Component />
                   </Route>
                 ))}
+
                 <Redirect path="/" to="/home/" />
               </Switch>
             </div>

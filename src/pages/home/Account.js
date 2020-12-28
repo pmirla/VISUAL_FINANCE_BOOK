@@ -3,12 +3,20 @@ import Signup from "../../components/common/Signup";
 import Signin from "../../components/common/Signin";
 import Home from "../../components/common/Home";
 import { firebaseAuth } from "../../provider/AuthProvider";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory
+} from "react-router-dom";
 import Divider from "@material-ui/core/Divider";
 
 function Account() {
   const { token, handleSignout, inputs } = useContext(firebaseAuth);
   console.log(token);
+  const history = useHistory();
+
   return (
     <>
       <p>This is page to manage your Account </p>
@@ -16,7 +24,14 @@ function Account() {
         {token !== null ? (
           <>
             Currently Signed in As {inputs.email}
-            <button onClick={handleSignout}>sign out </button>{" "}
+            <button onClick={handleSignout}>sign out </button>
+            <button
+              onClick={() => {
+                history.goBack();
+              }}
+            >
+              Go Back{" "}
+            </button>
           </>
         ) : (
           <>
