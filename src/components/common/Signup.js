@@ -23,7 +23,7 @@ const Signup = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       {/* replace the div tags with a form tag */}
-      Signup
+      <p>Signup</p>
       {/* make inputs  */}
       <input
         onChange={handleChange}

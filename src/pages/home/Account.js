@@ -1,28 +1,49 @@
 import React, { useContext } from "react";
-import { Route, Switch } from "react-router-dom";
 import Signup from "../../components/common/Signup";
 import Signin from "../../components/common/Signin";
 import Home from "../../components/common/Home";
 import { firebaseAuth } from "../../provider/AuthProvider";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Divider from "@material-ui/core/Divider";
 
 function Account() {
-  const { token } = useContext(firebaseAuth);
+  const { token, handleSignout, inputs } = useContext(firebaseAuth);
   console.log(token);
   return (
     <>
-      This is Home
-      {/* switch allows switching which components render.  */}
-      <Switch>
-        {/* route allows you to render by url path */}
+      <p>This is page to manage your Account </p>
+      <Router>
+        {token !== null ? (
+          <>
+            Currently Signed in As {inputs.email}
+            <button onClick={handleSignout}>sign out </button>{" "}
+          </>
+        ) : (
+          <>
+            <Signin />
+            <Divider variant="middle" />
 
-        <Route
-          exact
-          path="/home/Account"
-          render={(rProps) => (token === null ? <Signin /> : <Home />)}
-        />
-        <Route exact path="/signin" component={Signin} />
-        <Route exact path="/signup" component={Signup} />
-      </Switch>
+            <div>
+              <Link to="/home/Account/Signup">New users Sign Up</Link>
+            </div>
+          </>
+        )}
+
+        {/* switch allows switching which components render.  */}
+        <Switch>
+          {/* <Route
+            exact
+            path="/home/Account"
+            render={(rProps) => (token === null ? <Signin /> : <Home />)}
+          /> */}
+          {/* <Route exact path="/home/Account/Signin" component={Signin} /> */}
+          {token === null ? (
+            <Route path="/home/Account/Signup" component={Signup} />
+          ) : (
+            <> </>
+          )}
+        </Switch>
+      </Router>
     </>
   );
 }

@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { firebaseAuth } from "../../provider/AuthProvider";
 
 const Home = (props) => {
-  const { handleSignout } = useContext(firebaseAuth);
+  const { handleSignout, inputs } = useContext(firebaseAuth);
   return (
     <div>
-      Home, login successful!!!!!!
+      Currently Signed in As {inputs.email}
       <button onClick={handleSignout}>sign out </button>
     </div>
   );

@@ -20,7 +20,7 @@ const Signin = () => {
   return (
     <form onSubmit={handleSubmit}>
       {/* replace the div tags with a form tag */}
-      Signin
+      <p>Signin</p>
       {/* make inputs  */}
       <input
         onChange={handleChange}

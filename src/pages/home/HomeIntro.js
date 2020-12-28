@@ -27,10 +27,7 @@ function HomeIntro() {
             </li>
 
             <li>
-              <Link to="./MathematicsExample">
-                Click here for sample video on Essential Mathematics on topic of
-                surface functions of 2 variables
-              </Link>
+              <Link to="./MathematicsExample">Sample video1</Link>
             </li>
           </ul>
 
