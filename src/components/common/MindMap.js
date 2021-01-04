@@ -2,14 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
-
 import * as d3 from "d3";
 
 const MindMap = (props) => {
